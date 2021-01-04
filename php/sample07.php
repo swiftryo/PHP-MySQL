@@ -19,18 +19,9 @@
 <h2>Practice</h2>
 <pre>
 <!-- ここにプログラムを記述します -->
-<!-- <#?php
-// $i = 1;
-// while ($i <= 365) {
-//   print($i . "\n");
-//   $i = $i + 1;
-// }
-?> -->
 
 <?php
-for ($i=1; $i<=365; $i++) {
-  print($i . "\n");
-}
+print (date('n/j(D)', time() + 60*60*24))
 ?>
 </pre>
 </main>
