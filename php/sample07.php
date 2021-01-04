@@ -21,7 +21,11 @@
 <!-- ここにプログラムを記述します -->
 
 <?php
-print (date('n/j(D)', time() + 60*60*24))
+for ($i=1; $i<=365; $i++) {
+  $date = strtotime('+' . $i . 'day');
+  print (date('n/j(D)', $date));
+  print "\n";
+}
 ?>
 </pre>
 </main>
