@@ -23,6 +23,7 @@
     try {
       $db = new PDO('mysql:dbname=mydb;host=localhost;charset=utf8', 'root', 'root'); 
       $statement = $db->prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
+      $statement->bindparam(1, $_POST['memo']);
       $statement->execute(array($_POST['memo']));
       echo 'メッセージが登録されました。';
         }catch(PDOException $e){
