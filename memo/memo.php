@@ -41,6 +41,8 @@
   <pre><?php print($memo['memo']); ?></pre>
   <a href="update.php?id=<?php print($memo['id']); ?>">編集</a>
   |
+  <a href="delete.php?id=<?php print($memo['id']); ?>">削除</a>
+  |
   <a href="index.php">戻る</a>
 </article>
 
