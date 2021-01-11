@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require('../dbconnect.php');
 
 	if (!empty($_POST)) {
 		if ($_POST['name'] === '') {
@@ -19,6 +20,15 @@
 			$ext = substr($fileName, -3);
 			if ($ext != 'jpg' && $ext != 'gif' && $ext != 'png') {
 				$error['image'] = 'type';
+			}
+		}
+		// アカウント重複チェック
+		if(empty($error)) {
+			$member = $db->prepare('SELECT COUNT(*) AS cnt FROM members WHERE email=?');
+			$member->execute(array($_POST['email']));
+			$record = $member->fetch();
+			if ($record['cnt'] > 0) {
+				$error['email'] = 'duplicate';
 			}
 		}
 
@@ -73,6 +83,9 @@
         	<input type="text" name="email" size="35" maxlength="255" value="<?php print (htmlspecialchars($_POST['email'], ENT_QUOTES)); ?>" />
 					<?php if ($error['email'] === 'blank'): ?>
 						<p class="error">*メールアドレスを入力してください。</p>
+					<?php endif; ?>
+					<?php if ($error['email'] === 'duplicate'): ?>
+						<p class="error">*登録されているメールアドレスです。</p>
 					<?php endif; ?>
 
 		<dt>パスワード<span class="required">必須</span></dt>
