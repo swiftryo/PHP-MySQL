@@ -6,9 +6,12 @@
   <title>Document</title>
 </head>
 <body>
-こちらはhtmlです
   <?php
-    echo('こちらphp');
+    // 変数　動的型付
+    // $test = 123;
+    $test = 456;
+    var_dump($test);
+    // echo $test;
 
   ?>
 </body>
