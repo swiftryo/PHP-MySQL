@@ -12,7 +12,18 @@
     $test = 456;
     var_dump($test);
     // echo $test;
+    //先頭は英文字は＿ 
+    // 
 
+    $array_member = [
+      'nema' => 'ホンダ',
+      'height' => 170,
+      'hobby' => 'サッカー'
+    ];
+    // -ではなく=注意
+
+    echo $array_member['hobby'];
+    // var_dump($array_member);
   ?>
 </body>
 </html>
