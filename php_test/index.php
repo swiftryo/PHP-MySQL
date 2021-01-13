@@ -51,17 +51,66 @@
     //   条件が真なら実行
     // }
 
-    $height = 90;
+    // $height = 90;
 
-    if ($height === 91) {
-      echo '身長は' . $height . 'cmです';
-    } else {
-      echo '身長は' . $height;
-    }
+    // if ($height === 91) {
+    //   echo '身長は' . $height . 'cmです';
+    // } else {
+    //   echo '身長は' . $height;
+    // }
 
     // == 一致
     // ===　型も一致　使うならこっち
 
+    // $test = '';
+
+    // if(!empty($test)) {
+    //   echo 'からです';
+    // }
+
+    // isset empty is_null
+    // AND OR
+
+    // $members = [
+    //   'name' => '本田',
+    //   'height' => 170,
+    //   'hobby' => 'サッカー'
+    // ];
+
+    // // バリューのみ
+
+    // // foreach($members as $member) {
+    // //   echo $member;
+    // // }
+
+    // // キーとバリューそれぞれ
+    // foreach($members as $key => $value){
+    //   echo $key . 'は' . $value . 'です';
+    // }
+
+    // for($i = 0; $i < 10; $i++ ){
+    //   if($i === 5) {
+    //     continue;
+    //   }
+    //   echo $i;
+    // }
+    // $j = 0;
+    // while($j < 5){
+    //   echo $j;
+    //   $j++;
+
+    // }
+    
+    // function test(引数){
+    //   // 処理
+    //   return 戻り値;
+    // }
+    // $text = 'あいう';
+    // echo strlen($text);
+    // echo mb_strlen($text);
+    $str_2 ='指定文字列で、分割します';
+
+    var_dump(explode('で', $str_2));
 
 
 
