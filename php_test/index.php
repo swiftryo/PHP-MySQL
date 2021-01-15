@@ -108,9 +108,17 @@
     // $text = 'あいう';
     // echo strlen($text);
     // echo mb_strlen($text);
-    $str_2 ='指定文字列で、分割します';
+    // $str_2 ='指定文字列で、分割します';
 
-    var_dump(explode('で', $str_2));
+    // var_dump(explode('で', $str_2));
+
+
+    $array = ['りんご','みかん'];
+
+    array_push($array,'ぶどう','なし');
+
+    
+    var_dump($array);
 
 
 
