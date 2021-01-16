@@ -113,12 +113,59 @@
     // var_dump(explode('で', $str_2));
 
 
-    $array = ['りんご','みかん'];
+    // $array = ['りんご','みかん'];
 
-    array_push($array,'ぶどう','なし');
+    // array_push($array,'ぶどう','なし');
 
     
-    var_dump($array);
+    // var_dump($array);
+
+    // camelCase
+
+    // $postalCode = '123-4567';
+    // function checkPostalCode($str) {
+    //   $replaced = str_replace('-', '', $str);
+    //   $lenght = strlen($replaced);
+
+    //   if($lenght === 7){
+    //     return true;  
+    //   }
+    //   return false;
+    // }
+
+    // var_dump(checkPostalCode($postalCode));
+
+    // // snakeCase  
+    // check_postal_code()
+
+    // $globalVariable = 'グローバル変数です';
+
+    // function checkScope() {
+    //   $localVariable = 'ローカル変数です';
+    //   global $globalVariable;
+    //   echo $globalVariable;
+    // }
+
+    // echo $globalVariable;
+    // echo $localVariable;
+
+    // checkScope();
+
+    // require エラー　エラーで止まるからこっちを使うようにする
+    // include 警告 処理が続けれるなら
+
+
+    // require 'common.php';
+
+    // echo $commonVariable;
+
+    // commonTest();
+
+    // $test = 123;
+    // echo $test;
+    // phpinfo();
+
+
 
 
 
