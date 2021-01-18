@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+require 'validation.php';
 // クリックジャッキング
 header('X-FRAME-OPTIONS:DENY');
 
@@ -12,8 +14,9 @@ header('X-FRAME-OPTIONS:DENY');
   // 入力、確認、完了
 
   $pageFlag = 0;
+  $errors = validation($_POST);
 
-  if(!empty($_POST['btn_confirm'])){
+  if(!empty($_POST['btn_confirm']) && empty($errors) ){
     $pageFlag = 1;
   }
   if(!empty($_POST['btn_submit'])){
@@ -100,6 +103,17 @@ header('X-FRAME-OPTIONS:DENY');
   }
   $token = $_SESSION['csrfToken'];
 ?>
+
+<?php if(!empty($errors) && !empty($_POST['btn_confirm']) ): ?>
+  <?php echo '<ul>' ; ?>
+    <?php
+      foreach($errors as $error) {
+        echo '<li>' . $error . '</li>' ;
+      }
+    ?>
+  <?php echo '</ul>'; ?>
+<?php endif; ?>
+
   <form method="POST" action="input.php">
     氏名
     <input type="text" name="your_name" value="<?php if(!empty($_POST['your_name'])){echo h($_POST['your_name']);} ?>">
