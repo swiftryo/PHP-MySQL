@@ -23,7 +23,21 @@
   
   var_dump($result);
   // トランザクション まとまって処理 beginTransaction, commit, rollback
-  
+
+  $pdo->beginTransaction();
+  try{
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue('id', 2, PDO::PARAM_INT);
+    $stmt->execute(); 
+    // sql処理
+    $pdo->commit();
+
+  }catch(PDOException $e){
+
+    $pdo->rollback();
+    // 更新キャンセル
+  }
+
   
 
 
