@@ -93,6 +93,9 @@ header('X-FRAME-OPTIONS:DENY');
 
 <?php if($pageFlag === 2) : ?>
   <?php if($_POST['csrf'] === $_SESSION['csrfToken']): ?>
+  <!-- DB接続 -->
+  <!-- DB保存 -->
+  
     送信が完了しました。
     <?php unset($_SESSION['csrfToken']); ?>
   <?php endif; ?>
