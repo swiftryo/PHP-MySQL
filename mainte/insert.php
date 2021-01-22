@@ -6,19 +6,34 @@
 
 $params = [
   'id' => null,
-  'your_name' => 'なまえ',
+  'your_name' => 'なまえええ',
   'email' => 'test@test.com',
   'url' => 'http://test.com',
   'gender' => '1',
   'age' => '2',
   'contact' => 'いいい',
-  'created_at' => 'NOW()'
+  'created_at' => null
 ];
 
-$sql = 'insert into contacts select * from contacts where id = :id';
+$count = 0;
+$columns = '';
+$values = '';
+
+foreach(array_keys($params) as $key){
+  if($count++>0){
+    $columns .= ',';
+    $values .= ',';
+  }
+  $columns .= $key;
+  $values .= ':'.$key;
+}
+
+$sql = 'insert into contacts ('. $columns .')values('. $values .')';
+// var_dump($sql);
+// exit;
+
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue('id', 2, PDO::PARAM_INT);
-$stmt->execute(); 
+$stmt->execute($params); 
 
 
 ?>
