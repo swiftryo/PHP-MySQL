@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "IDとパスワードを入力してください"
-AuthUserFile /Applications/MAMP/htdocs/mainte/.htpasswd
-require valid-user
